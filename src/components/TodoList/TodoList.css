@@ -1,0 +1,26 @@
+.todoList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todoList li {
+  position: relative;
+  padding: 16px 64px;
+  text-align: left;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  transition: all 0.3s;
+  color: #919191;
+}
+
+.todoList li:last-child {
+  border-bottom: none;
+}
+
+.todoList li:hover{
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 25px;
+}
