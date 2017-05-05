@@ -3,6 +3,7 @@ import update from 'react-addons-update';
 
 import TodoInput from '../TodoInput/TodoInput';
 import TodoList from '../TodoList/TodoList';
+import Footer from '../Footer/Footer';
 import './Container.css';
 
 class Container extends Component {
@@ -10,11 +11,14 @@ class Container extends Component {
         super(props);
         this.state = {
             todos: [{
-                todo: "posting"
+                todo: "posting",
+                completed: false
             }, {
-                todo: "study"
+                todo: "study",
+                completed: false
             }, {
-                todo: "meeting"
+                todo: "meeting",
+                completed: true
             }]
         };
         this.handleCreate = this.handleCreate.bind(this);
@@ -35,6 +39,7 @@ class Container extends Component {
             <div className="Container">
                 <TodoInput handleCreate={this.handleCreate}/>
                 <TodoList todos={this.state.todos}/>
+                <Footer/>
             </div>
         );
     }

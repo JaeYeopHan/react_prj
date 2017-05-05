@@ -6,7 +6,8 @@ class TodoInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todo: ''
+            todo: '',
+            completed: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);

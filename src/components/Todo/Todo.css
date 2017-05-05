@@ -18,3 +18,7 @@
 .toggle-all:checked:before {
   color: #737373;
 }
+
+.completed {
+  text-decoration: line-through;
+}
