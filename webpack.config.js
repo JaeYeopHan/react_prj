@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: ['react-hot-loader/patch', './src/index.js'],
+    entry: ['react-hot-loader/patch', './front_end_src/index.js'],
 
     output: {
         path: path.join(__dirname, '/dist/'),
@@ -30,7 +30,10 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['env', 'react'],
+                            presets: [
+                                ['env'],
+                                ['react']
+                            ],
                             plugins: ["react-hot-loader/babel"]
                         }
                     }
@@ -60,7 +63,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('styles.css'),
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './public/index.html'
         })
     ]
 };
