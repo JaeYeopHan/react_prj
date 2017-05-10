@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import './Footer.css';
 
-const propTypes = {
+const propTypes = {};
 
-};
-
-const defaultProps = {
-
-};
+const defaultProps = {};
 
 class Footer extends Component {
     constructor(props) {
@@ -32,7 +28,6 @@ class Footer extends Component {
                     </li>
 
                 </ul>
-                <button className="clear-completed">Clear completed</button>
             </footer>
         );
     }

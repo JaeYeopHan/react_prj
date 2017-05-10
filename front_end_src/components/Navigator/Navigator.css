@@ -1,10 +1,25 @@
-.Navigator {
-  text-align: center;
-  font-weight: 100;
-  margin-bottom: 2rem;
+.navigator {
+  background: #F5F5F5;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
 
-.Button {
+.item {
+  text-align: center;
+  padding: 1rem 0;
+  display: table-cell;
+  text-decoration: none;
+  font-size: 1.1rem;
   color: #ECD7D7;
-  border: #ECD7D7;
+}
+
+.item:hover {
+  background: #ECD7D7;
+  color: #fff;
+}
+
+.item:active, .item.active {
+  background: #ECD7D7;
+  color: #fff;
 }

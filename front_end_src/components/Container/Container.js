@@ -1,48 +1,37 @@
-import React, { Component } from 'react';
-import update from 'react-addons-update';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Header from '../Header/Header';
+import Navigator from '../Navigator/Navigator';
 
-import TodoInput from '../TodoInput/TodoInput';
-import TodoList from '../TodoList/TodoList';
-import Footer from '../Footer/Footer';
-import './Container.css';
+import Home from '../Home/Home';
+import TodoContainer from '../TodoContainer/TodoContainer';
+import BoardContainer from '../BoardContainer/BoardContainer';
 
-class Container extends Component {
+import NotFound from '../NotFound/NotFound';
+
+class componentName extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            todos: [{
-                todo: "posting",
-                completed: false
-            }, {
-                todo: "study",
-                completed: false
-            }, {
-                todo: "meeting",
-                completed: true
-            }]
-        };
-        this.handleCreate = this.handleCreate.bind(this);
     }
 
-    handleCreate(value) {
-        const newTodo = {
-            todo: value
-        };
-        this.setState({
-            todos: update(this.state.todos, { $push: [newTodo] })
-        });
-        console.log(`setState() execute asynchronous!!!`);
-    }
-
-   render() {
+    render() {
         return (
-            <div className="Container">
-                <TodoInput handleCreate={this.handleCreate}/>
-                <TodoList todos={this.state.todos}/>
-                <Footer/>
-            </div>
+            <Router>
+                <div>
+                    <Header/>
+                    <Navigator/>
+                    <div>
+                        <Switch>
+                            <Route exact path="/" component={Home}/>
+                            <Route path="/todo" component={TodoContainer}/>
+                            <Route path="/board/:name" component={BoardContainer}/>
+                            <Route component={NotFound}/>
+                        </Switch>
+                    </div>
+                </div>
+            </Router>
         );
     }
 }
 
-export default Container;
+export default componentName;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropsTypes from 'prop-types';
 
 import Todo from '../Todo/Todo';

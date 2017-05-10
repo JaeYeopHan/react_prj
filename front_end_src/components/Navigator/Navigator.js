@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import './Navigator.css';
 
 class Navigator extends Component {
@@ -9,9 +9,25 @@ class Navigator extends Component {
 
     render() {
         return (
-            <div className="Navigator">
-                <Button>List</Button>
-                <Button>Status</Button>
+            <div className="navigator">
+                <NavLink
+                    exact to="/"
+                    className="item"
+                    activeClassName="active">
+                    Home
+                </NavLink>
+                <NavLink
+                    to="/todo"
+                    className="item"
+                    activeClassName="active">
+                    Todo
+                </NavLink>
+                <NavLink
+                    to="/board/jbee"
+                    className="item"
+                    activeClassName="active">
+                    Board
+                </NavLink>
             </div>
         );
     }

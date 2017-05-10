@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Header, Navigator, Container } from './components';
+import Container from './components/Container/Container';
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <Header/>
-                <Navigator/>
-                <Container/>
-            </div>
+            <Container/>
         );
     }
 }
